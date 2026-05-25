@@ -1,0 +1,38 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Gerir Bilhetes</h1>
+    <hr class="border-vermelho" />
+</div>
+<table class="table table-striped table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Adversário</th>
+            <th>Data da Compra</th>
+            <th>Numero do Bilhete</th>
+            <th>Nome do Cliente</th>
+            <th>NºSócio</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Bilhete)
+        {
+            <tr>
+                <td>@item.Adversario</td>
+                <td>@item.DataCompra.ToString("dd/MM/yyyy")</td>
+                <td>@item.NumeroBilhete</td>
+                <td>@item.UserName</td>
+                <td>@item.NumeroSocio</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+<div class="mb-2">
+    <strong>Total De Bilhetes Vendidos -> </strong>
+    @ViewBag.TotalBilhetes
+    <br />
+    <strong>Valor Faturado -> </strong>
+    @ViewBag.ValorFaturado €
+</div>
+<form asp-controller="GestaoJogoBilhete" asp-action="Index" method="post">
+    <button type="submit" name="GestaoJogoBilhete" value="1">Gestão Jogos e Bilhetes</button>
+</form>

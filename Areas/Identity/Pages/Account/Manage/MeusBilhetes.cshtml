@@ -1,0 +1,48 @@
+﻿@page
+@model MeusBilhetesModel
+@{
+    ViewData["Title"] = "Meus Bilhetes";
+    ViewData["ActivePage"] = ManageNavPages.MeusBilhetes;
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<div class="row">
+    <div class="col-md-12">
+        @if (Model.ListaDeBilhetes == null || !Model.ListaDeBilhetes.Any())
+        {
+            <div class="alert alert-info">
+                <p>Ainda não tens bilhetes disponíveis
+            </div>
+
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Jogo</th>
+                        <th>Data da Compra</th>
+                        <th>Numero Bilhete</th>
+                        <th>Ações</th>
+                        
+                    </tr>
+                </thead>
+                @foreach (var item in Model.ListaDeBilhetes)
+                {
+                    <tbody>
+                        <tr>
+                            <td>SCVR vs @item.Adversario </td>
+                            <td>@item.DataCompra.ToString("dd/MM/yyyy")</td>
+                            <td>@item.NumeroBilhete</td>
+                            <td><a href="#" class="btn btn-sm btn-primary">Download PDF</a></td>
+                        </tr>
+                    </tbody>
+                }
+
+            </table>
+            
+        }
+        
+    </div>
+</div>

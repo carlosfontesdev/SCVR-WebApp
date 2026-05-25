@@ -1,0 +1,53 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Editar Encomenda</h1>
+    <hr class="border-vermelho" />
+</div>
+
+<form asp-controller="EditarEncomenda" asp-action="Index" method="post">
+   
+    @foreach (var item in ViewBag.Encomenda)
+    {
+        <div>
+            <strong>Tipo Produto</strong>
+            <br />
+            @item.NomeProduto"
+            <br />
+            <strong>Tamanho</strong>
+            <br />
+            <input type="text" name="Tamanho" value="@item.Tamanho" />
+            <br />
+            <strong>Morada de Envio</strong>
+            <br />
+            <input type="text" name="MoradaEnvio" value="@item.MoradaEnvio" />
+            <br />
+            <strong>Numero de Socio</strong>
+            <br />
+            @item.NumeroSocio
+            <br />
+            <strong>Utilizador</strong>
+            <br />
+            @item.UserName
+            <br />
+            <strong>Estado de Pagamento</strong>
+            <br />
+            <input type="text" name="EstadoPagamento" value="@item.EstadoPagamento" />
+            <br />
+            <br />
+            <button type="submit" name="clicado" value="1">Editar Encomenda</button>
+            <br />
+        </div>
+    }
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+</form>
+<form asp-controller="GerirEncomenda" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Produto</button>
+</form>
+
+        
+
+ 

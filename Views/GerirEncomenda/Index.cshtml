@@ -1,0 +1,63 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Gerir Encomendas</h1>
+    <hr class="border-vermelho" />
+</div>
+<form asp-controller="GerirEncomenda" asp-action="Index" method="post">
+    <label for="filtro">Filtrar por Estado de Pagamento:</label>
+    <select name="filtro" id="filtro" class="form-select">
+        <option value="" selected disabled hidden>Selecione Estado</option>
+        <option value="Pago">Pago</option>
+        <option value="Pendente">Pendente</option>
+    </select>
+    <button type="submit" name="clicado" value="1" class="btn-buy">Filtrar</button>
+    <br />
+</form>
+<table class="table table-striped table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Tipo Produto</th>
+            <th>Tamanho</th>
+            <th>Morada de Envio</th>
+            <th>NºSócio</th>
+            <th>Utilizador </th>
+            <th>Estado Pagamento</th>
+            <th>Editar/Desativar</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in ViewBag.Encomenda)
+        {
+            <tr >
+                <td>@item.NomeProduto</td>
+                <td>@item.Tamanho</td>
+                <td>@item.MoradaEnvio</td>
+                <td>@item.NumeroSocio</td>
+                <td>@item.UserName</td>
+                <td>@item.EstadoPagamento</td>
+                <td>
+                    @if (item.Ativa == true)
+                    {
+                        <a asp-controller="EditarEncomenda" asp-action="Index" asp-route-id="@item.Id">Editar</a>
+                        <a asp-controller="DesativarEncomenda" asp-route-id="@item.Id">Desativar</a>
+                    
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Desativada</span>
+                    }
+                </td>
+                
+               
+            </tr>
+        }
+
+    </tbody>
+</table>
+<br />
+<strong>Total De Encomendas Efetuadas -> </strong>
+<strong>@ViewBag.TotalEncomendas</strong>
+<br />
+<strong>Valor Faturado -> </strong>
+<strong>@ViewBag.TotalFaturado €</strong>

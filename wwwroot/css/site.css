@@ -1,0 +1,302 @@
+/* =======================================================
+   IDENTIDADE VISUAL - SPORT CLUBE VILA REAL (SCVR)
+   ======================================================= */
+
+:root {
+    --scvr-preto: #000000;
+    --scvr-branco: #ffffff;
+    --scvr-vermelho: #e31e24;
+    --scvr-cinza-claro: #f8f9fa;
+}
+
+/* --- FUNDO DA PÁGINA (MARCA DE ÁGUA FIXA) --- */
+html, body {
+    height: 100%;
+}
+body {
+    background-color: var(--scvr-branco);
+    font-family: 'Oswald', 'Segoe UI', sans-serif;
+    color: var(--scvr-preto);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+/* Estilo para a linha vermelha */
+.border-vermelho {
+    border-top: 3px solid red;
+    width: 100px;
+    margin: 0 auto;
+}
+
+/* Estilo para o botão */
+.btn-scvr {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    .btn-scvr:hover {
+        background-color: #cc0000;
+        color: white;
+    }
+
+/* Estilo adicional para a imagem */
+.bilhete-img-container img {
+    max-height: 250px; /* Limita a altura da imagem */
+    object-fit: contain; /* Mantém o aspeto da imagem sem a distorcer */
+}
+
+
+/* --- HEADER & NAVBAR --- */
+.navbar {
+    background-color: var(--scvr-preto) !important;
+    border-bottom: 3px solid var(--scvr-vermelho);
+    z-index: 1000;
+}
+
+.nav-link {
+    color: var(--scvr-branco) !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+    .nav-link:hover {
+        color: var(--scvr-vermelho) !important;
+    }
+
+/* --- SECÇÕES --- */
+.hero-section {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: transparent; /* Importante para ver o fundo */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px white; /* Ajuda na legibilidade */
+}
+
+/* --- COMPONENTES --- */
+.btn-scvr {
+    background-color: var(--scvr-vermelho) !important;
+    color: white !important;
+    border: 2px solid var(--scvr-preto) !important;
+    padding: 12px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+    .btn-scvr:hover {
+        background-color: var(--scvr-preto) !important;
+        color: white !important;
+        transform: scale(1.05);
+    }
+
+/* --- NOTÍCIAS E JORNADA --- */
+.news-item {
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    border-left: 5px solid var(--scvr-vermelho);
+    margin: 15px auto;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 800px;
+    backdrop-filter: blur(2px); /* Efeito moderno de vidro */
+}
+/* Ajuste para o container de bilhetes */
+.bilhete-img-container img {
+    transition: transform 0.3s ease;
+    border: 2px solid var(--scvr-preto);
+}
+
+    .bilhete-img-container img:hover {
+        transform: scale(1.05) rotate(2deg); /* Efeito dinâmico ao passar o rato */
+    }
+
+.border-vermelho {
+    border: 2px solid var(--scvr-vermelho);
+    width: 80px;
+    margin: 10px auto;
+    opacity: 1;
+}
+
+/* Garante que o texto dos detalhes sobressaia */
+.bilhete-details h2 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--scvr-preto);
+    text-transform: uppercase;
+}
+/* --- CORREÇÃO DE VISIBILIDADE IDENTITY --- */
+
+/* Forçar os inputs a mostrar o texto em preto */
+.form-control,
+.form-select,
+input {
+    color: #000000 !important; /* Texto sempre preto */
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Fundo branco sólido/opaco */
+}
+
+/* Corrigir as Labels (os títulos dentro dos campos) */
+.form-floating > label {
+    color: #666666 !important;
+}
+
+/* Corrigir os links da esquerda (Profile, Password, Meus Bilhetes) */
+.nav-pills .nav-link:not(.active) {
+    color: #000000 !important; /* Texto preto quando não selecionado */
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--scvr-vermelho) !important;
+    color: #ffffff !important; /* Texto branco apenas no botão vermelho ativo */
+}
+
+/* Títulos das páginas de perfil */
+h2, h3, h4, .h2, .h3, .h4 {
+    color: #000000 !important;
+}
+
+/* Caso os dados estejam em modo "Apenas Leitura" (disabled) */
+input:disabled {
+    background-color: #eeeeee !important;
+    color: #333333 !important;
+}
+/* Títulos das Secções */
+.section-title {
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 4px solid var(--scvr-vermelho);
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* Placar de Jogo */
+.match-card {
+    background-color: #ffffff; /* Fundo base branco */
+    /* A magia está aqui: em vez de "preto", usamos um preto com apenas 6% de opacidade (rgba) */
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 50%, transparent 50%);
+    background-size: 80px 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    border-radius: 15px;
+    border-bottom: 5px solid var(--scvr-vermelho);
+    border-top: 1px solid #ddd;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    position: relative;
+}
+/* Colocar a informação das equipas à frente */
+.team-info {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* O texto agora não precisa do brilho e fica bem nítido */
+.team-info h3 {
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-top: 15px;
+        font-size: 1.5rem;
+        color: #000000;
+        text-shadow: none; /* Retirado o brilho em redor das letras */
+}
+
+/* Os logótipos */
+.team-logo-small {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    /* Mantemos o multiply para disfarçar o quadrado branco do Cinfães, 
+       mas agora não estraga a imagem porque as riscas são claras */
+    mix-blend-mode: multiply;
+}
+/* O emblema VS */
+.vs-container {
+    position: relative;
+    z-index: 2;
+}
+
+.vs-text {
+    background: var(--scvr-vermelho);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    display: inline-block;
+    transform: rotate(-5deg);
+    box-shadow: 0 4px 15px rgba(227, 30, 36, 0.4);
+}
+
+/* Cartões de Notícias */
+.news-card {
+    background: white;
+    border-left: 8px solid var(--scvr-preto); /* Referência à camisola */
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+    .news-card:hover {
+        border-left-color: var(--scvr-vermelho);
+        transform: translateY(-5px);
+    }
+
+.news-date {
+    color: var(--scvr-vermelho);
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.btn-read-more {
+    color: var(--scvr-preto);
+    text-decoration: none;
+    font-weight: bold;
+}
+/* --- RODAPÉ (FOOTER) --- */
+
+footer {
+    background-color: var(--scvr-preto);
+    color: var(--scvr-branco) !important; /* Força todo o texto a ficar branco */
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 4px solid var(--scvr-vermelho); /* Linha vermelha de separação */
+}
+
+ /* Forçar o texto dentro dos parágrafos ou contentores do footer a branco */
+    footer * {
+        color: var(--scvr-branco) !important;
+    }
+
+/* Estilizar os links no footer (ex: Privacy) */
+    footer a {
+        color: var(--scvr-branco) !important; /* Link em branco */
+        text-decoration: underline; /* Manter sublinhado para saberem que é clicável */
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+        footer a:hover {
+            color: var(--scvr-vermelho) !important; /* Fica vermelho SCVR ao passar o rato */
+            text-decoration: none;
+        }
+

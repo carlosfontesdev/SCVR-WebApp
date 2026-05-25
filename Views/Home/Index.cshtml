@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="hero-section">
+    <img src="~/images/logoSCVR-removebg-preview.png" class="bg-symbol" alt="SCVR Logo Background" />
+
+    <div class="hero-content">
+        <h1>BEM-VINDOS AO <br /> SPORT CLUBE VILA REAL</h1>
+        <p class="lead">O orgulho de Trás-os-Montes e Alto Douro.</p>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1 class="display-4 section-title">Próxima Jornada</h1>
+
+            <div class="match-card">
+                <div class="team-info">
+                    <img src="~/images/logoSCVR-removebg-preview.png" class="team-logo-small" />
+                    @foreach (var item in ViewBag.SCVR)
+                    {
+                        <h3>@item.Nome</h3>
+                    }
+                </div>
+
+                <div class="vs-container">
+                    <span class="vs-text">VS</span>
+                </div>
+
+                <div class="team-info">
+                    
+                    <h3>@ViewBag.adversario</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h1 class="display-4 text-center section-title">Notícias</h1>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="news-card">
+                <div class="news-content">
+                    <span class="news-date">15 MAR 2026</span>
+                    <h3>Vitória decisiva no Monte da Forca</h3>
+                    <p>O SC Vila Real impôs-se com garra no último confronto do Campeonato de Portugal...</p>
+                    <a href="#" class="btn-read-more">Ler mais →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="news-card">
+                <div class="news-content">
+                    <span class="news-date">12 MAR 2026</span>
+                    <h3>Campanha de Sócios 2026</h3>
+                    <p>Veste a camisola e apoia o teu clube. Descobre as vantagens de ser sócio oficial.</p>
+                    <a href="#" class="btn-read-more">Ver condições →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

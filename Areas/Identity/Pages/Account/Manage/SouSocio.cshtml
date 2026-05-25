@@ -1,0 +1,61 @@
+﻿@page
+@model SouSocioModel
+@{
+    ViewData["Title"] = "Sou Sócio";
+    ViewData["ActivePage"] = ManageNavPages.SouSocio;
+}
+
+<h3>@ViewData["Title"]</h3>
+@if (Model.isSocio == true)
+{
+    <div class="alert alert-info">
+        <p>Sócio do Sport Clube De Vila Real
+    </div>
+
+}
+else
+{
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+
+
+                <div class="form-floating mb-3">
+                    Email:
+                    <br />
+                    <input type="text" name="email" />
+                </div>
+                <div class="form-floating mb-3">
+                    Numero Sócio:
+                    <br />
+                    <input type="text" name="numeroSocio" />
+                </div>
+                <br />
+                <button type="submit" name="clicado" value="1">Verificar</button>
+                @if (TempData["Sucesso"] != null)
+                {
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <strong>Sucesso:</strong> @TempData["Sucesso"]
+                    </div>
+                }
+                @if (TempData["Erro"] != null)
+                {
+                    <div class="alert alert-danger">
+                        <strong>Erro:</strong> @TempData["Erro"]
+                    </div>
+                }
+
+
+
+
+
+
+
+            </form>
+        </div>
+    </div>
+    
+}
+

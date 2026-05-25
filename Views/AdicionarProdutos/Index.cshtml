@@ -1,0 +1,55 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Adicionar Produtos</h1>
+    <hr class="border-vermelho" />
+</div>
+<form asp-controller="AdicionarProdutos" asp-action="Index" method="post">
+    @if (ViewBag.nome != null)
+    {
+        <input type="hidden" name="nome" value="@ViewBag.nome" />
+    }
+    <label for="nome">Escolher Produto:</label>
+    <select name="nome" id="nome" class="form-select">
+        <option value="" selected disabled hidden>Selecione Nome</option>
+        <option value="Camisola Casa SCVR">Camisola Casa SCVR</option>
+        <option value="Camisola Fora SCVR">Camisola Fora SCVR</option>
+        <option value="Cachecol Oficial">Cachecol Oficial</option>
+    </select>
+    <button type="submit" name="clicadoEscolher" value="1">Escolher</button>
+    <br />
+    <strong>Nome:</strong>
+    <br />
+    <strong>@ViewBag.nome</strong>
+    <br />
+    <strong>Descrição:</strong>
+    <br />
+    <strong>@ViewBag.descricao</strong>
+    <br />
+    <strong>Tipo:</strong>
+    <br />
+    <strong>@ViewBag.tipo</strong>
+    <br />
+    <label for="tamanho">Escolher Tamanho:</label>
+    <select name="tamanho" id="nome" class="form-select">
+        <option value="" selected disabled hidden>Selecione Tamanho</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+        <option value="Único">Unico</option>
+    </select>
+    <br />
+    <strong>Quantidade Adicionar:</strong>
+    <br />
+    <input type="text" name="quantidade" />
+    <button type="submit" name="clicadoAdicionar" value="1">Adicionar Produtos</button>
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+</form>
+<form asp-controller="GerirProduto" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Produto</button>
+</form>
+

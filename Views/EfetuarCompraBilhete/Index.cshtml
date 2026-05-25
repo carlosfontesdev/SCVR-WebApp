@@ -1,0 +1,33 @@
+﻿<div class="ticket-container">
+    <h3>Selecionar Bilhetes</h3>
+
+    <form asp-controller="EfetuarCompraBilhete" asp-action="Index" method="post">
+
+        <div class="bilhete-img-container">
+            <img src="~/images/bilhete.PNG" alt="Bilhete SCVR" class="img-fluid rounded shadow" style="max-width: 350px;">
+        </div>
+
+        <div class="ticket-row">
+            <div class="info">
+                <span class="label">Preço por bilhete:</span>
+                <span class="price">€ @ViewBag.preco</span>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantidade:</label>
+                <input type="number" id="quantity" name="quantidade" value="1" min="1" max="4">
+                (Máximo 4 bilhetes por Pessoa)
+            </div>
+        </div>
+
+        <button type="submit" name="clicado" value="1" class="btn-buy">Confirmar Compra</button>
+       
+    </form>
+</div>
+
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Erro:</strong> @TempData["Erro"]
+    </div>
+}

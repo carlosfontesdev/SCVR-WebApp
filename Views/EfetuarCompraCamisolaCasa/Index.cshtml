@@ -1,0 +1,51 @@
+﻿<form asp-controller="EfetuarCompraCamisolaCasa" asp-action="Index" method="post">
+    <input type="hidden" name="camisolaCasa" value="1" />
+    <input type="hidden" name="Preco" value="35" />
+
+    <div class="card-img-top bilhete-img-container p-3">
+        <img src="~/images/camisolaCasa.PNG" alt="Camisola Casa SCVR" class="img-fluid rounded">
+    </div>
+
+    <div class="card-body bilhete-details text-left">
+        <h2 class="h4 card-title font-weight-bold">Camisola Casa </h2>
+        <p class="text-muted card-text mb-2">Equipamento Oficial 25/26</p>
+
+        <ul class="list-unstyled mb-3">
+            <div class="mb-2">
+                <strong>👕 Tamanho:</strong>
+                <select name="tamanho">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                </select>
+            </div>
+            <div class="mb-2">
+                <strong>📝 Morada de Envio:</strong>
+                <input type="text" name="MoradaEnvio" class="form-control" />
+            </div>
+            <div><strong>💰 Preço:</strong> 35€</div>
+        </ul>
+
+        <button type="submit" name="clicado" value="1" class="btn btn-success btn-block">Comprar Agora</button>
+    </div>
+    @if (TempData["Erro"] != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Erro:</strong> @TempData["Erro"]
+        </div>
+    }
+    @if (TempData["ErroEncomendar"] != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Morada de Envio:</strong> @TempData["ErroEncomendar"]
+        </div>
+    }
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+   
+</form>

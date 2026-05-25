@@ -1,0 +1,35 @@
+﻿<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Bilheteira Oficial</h1>
+        <hr class="border-vermelho" />
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="news-item d-md-flex align-items-center gap-4">
+
+                <div class="bilhete-img-container">
+                    <img src="~/images/bilhete.PNG" alt="Bilhete SCVR" class="img-fluid rounded shadow" style="max-width: 350px;">
+                </div>
+
+                <div class="bilhete-details mt-3 mt-md-0">
+                    <h2 class="font-weight-bold">Próximo Jogo em Casa</h2>
+                    <p class="text-muted">Campeonato de Portugal - Série B</p>
+                    <ul class="list-unstyled">
+                        <li><strong>📍 Local:</strong> Campo do Monte da Forca</li>
+                        <li><strong>📅 Data:</strong> Próximo Domingo</li>
+                        <li><strong>💰 Preço:</strong> @ViewBag.precoBilhete €</li>
+                        <li><strong>⚽ Adversário:</strong> @ViewBag.adversario</li>
+                    </ul>
+
+                    <a asp-controller="EfetuarCompraBilhete"  class="btn-scvr mt-3">
+                        Comprar Bilhetes Agora
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

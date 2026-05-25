@@ -1,0 +1,40 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Eliminar Utilizador</h1>
+    <hr class="border-vermelho" />
+</div>
+
+<h2 class="text-danger fw-bold"><strong>Têm a certeza que pretende Eliminar este Utilizador</strong></h2>
+<form asp-controller="GerirUtilizadores" asp-action="EliminarUtilizador" method="Post">
+    @foreach (var item in ViewBag.Utilizador)
+    {
+        <div>
+            <strong>Username:</strong>
+            <br />
+            @item.UserName
+            <br />
+            <strong>Email:</strong>
+            <br />
+            @item.Email
+            <br />
+            <strong>Telemóvel:</strong>
+            <br />
+            @item.PhoneNumber
+            <br />
+            <strong>Sócio:</strong>
+            <br />
+            @item.IsSocio
+            <br />
+            <strong>Numero de Sócio:</strong>
+            <br />
+            @item.NumeroSocio
+            <br />
+            <br />
+            <button type="submit" name="clicado" value="1" class="btn-scvr mt-3">Eliminar Utilizador</button>
+            <br />
+        </div>
+    }
+</form>
+<br />
+<form asp-controller="GerirUtilizadores" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Utilizadores</button>
+</form>

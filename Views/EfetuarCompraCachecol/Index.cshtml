@@ -1,0 +1,44 @@
+﻿<form asp-controller="EfetuarCompraCachecol" asp-action="Index" method="post">
+        <input type="hidden" name="ProdutoId" value="1" />
+        <input type="hidden" name="Preco" value="35" />
+
+
+        <div class="card-img-top bilhete-img-container p-3">
+            <img src="~/images/Cachecol.PNG" alt="Cachecol" class="img-fluid rounded">
+        </div>
+
+        <div class="card-body bilhete-details text-left">
+            <h2 class="h4 card-title font-weight-bold">Cachecol SCVR</h2>
+            <p class="text-muted card-text mb-2">Cachecol SCVR</p>
+
+            <ul class="list-unstyled mb-3">
+                <div class="mb-2">
+                    <strong>📝 Morada de Envio:</strong>
+                    <input type="text" name="MoradaEnvio" class="form-control" />
+                </div>
+                <li><strong>💰 Preço:</strong> 15€</li>
+            </ul>
+
+
+             <button type="submit" name="clicado" value="1" class="btn btn-success btn-block">Comprar Agora</button>
+        </div>
+    @if (TempData["Erro"] != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Erro:</strong> @TempData["Erro"]
+        </div>
+    }
+    @if (TempData["ErroEncomendar"] != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Morada de Envio:</strong> @TempData["ErroEncomendar"]
+        </div>
+    }
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+
+</form>

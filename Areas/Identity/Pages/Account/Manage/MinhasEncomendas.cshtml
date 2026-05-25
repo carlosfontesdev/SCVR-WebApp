@@ -1,0 +1,49 @@
+﻿@page
+@model MinhasEncomendasModel
+@{
+    ViewData["Title"] = "Minhas Encomendas";
+    ViewData["ActivePage"] = ManageNavPages.MinhasEncomendas;
+}
+<h3>@ViewData["Title"]</h3>
+<div class="row">
+    <div class="col-md-12">
+            @if (Model.ListaDeEncomendas == null || !Model.ListaDeEncomendas.Any())
+            {
+                <div class="alert alert-info">
+                    <p>Ainda não tens encomendas disponíveis
+                </div>
+
+            }
+            else
+            {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Produto</th>
+                        <th>Tamanho</th>
+                        <th>Preço</th>
+                        <th>Morada de Envio</th>
+                        <th>Data da Compra</th>
+                        <th>Ações</th>
+
+                    </tr>
+                    @foreach (var item in Model.ListaDeEncomendas)
+                    {
+                    <tbody>
+                        <tr>
+                            <td>@item.Tipo</td>
+                            <th>@item.Tamanho</th>
+                            <th>@item.PrecoVenda €</th>
+                            <td>@item.MoradaEnvio</td>
+                            <td>@item.DataEncomenda.ToString("dd/MM/yyyy")</td>
+                            <td><a href="#" class="btn btn-sm btn-primary">Download PDF</a></td>
+                        </tr>
+                    </tbody>
+                }
+                </thead>
+
+            </table>
+        }
+    </div>
+</div>
+      

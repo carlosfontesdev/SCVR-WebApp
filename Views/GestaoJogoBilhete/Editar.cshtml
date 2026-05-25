@@ -1,0 +1,42 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Editar Jogo</h1>
+    <hr class="border-vermelho" />
+</div>
+<form asp-controller="GestaoJogoBilhete" asp-action="Editar" method="post">
+    @foreach(var item in ViewBag.Jogo)
+        {
+        <div>
+            <strong>Adversário</strong>
+            <br />
+            @item.Adversario
+            <br />
+            <strong>Data do Jogo</strong>
+            <br />
+            <input type="datetime" name="dataJogo" value="@item.DataJogo"/>
+            <br />
+            <strong>Preço de cada Bilhete</strong>
+            <br />
+            <input type="text" name="precoBilhete" value="@item.PrecoBase"/>
+            <br />
+            <strong>Lotação Máxima</strong>
+            <br />
+            <input type="number" name="lotacaoMaxima" value="@item.LotacaoMaxima" />
+            <br />
+            <strong>Quantidade de Bilhetes</strong>
+            <br />
+            <input type="number" name="quantidadeBilhetes" value="@item.BilhetesDisponiveis"/>
+            <br />
+
+            <button type="submit" name="clicado" value="1">Guardar Jogo</button>
+        </div>
+        }
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+</form>
+<form asp-controller="GestaoJogoBilhete" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Jogo e Bilhete</button>
+</form>

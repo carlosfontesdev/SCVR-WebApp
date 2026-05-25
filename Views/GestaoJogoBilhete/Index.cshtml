@@ -1,0 +1,82 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Gestão de Jogos e Bilheteira</h1>
+    <hr class="border-vermelho" />
+</div>
+<table class="table table-striped table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Adversário</th>
+            <th>Data do Jogo</th>
+            <th>Preço Base</th>
+            <th>Lotação Máxima</th>
+            <th>Bilhetes Disponiveis para Venda</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Jogo)
+        {
+            <tr>
+                <td>@item.Adversario</td>
+                <td>@item.DataJogo.ToString("dd/MM/yyyy")</td>
+                <td>@item.PrecoBase €</td>
+                <td>@item.LotacaoMaxima</td>
+                <td>@item.BilhetesDisponiveis</td>
+                <td>
+                    <a asp-controller="GestaoJogoBilhete" asp-action="Editar" asp-route-id="@item.Id">Editar</a>
+                </td>    
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<form asp-controller="GestaoJogoBilhete" asp-action="Index" method="post">
+    <div class="mb-2">
+        <label for="filtro"><strong>Adversário:</strong></label>
+        <select name="adversario" id="adversario" class="form-select">
+                <option value="" selected disabled hidden>Selecione Adversario</option>
+                @foreach (var item in ViewBag.Adversario)
+                    {
+                        <option value="@item.Nome">@item.Nome</option>
+            
+                    }
+        </select>
+        <br />
+        <strong>Data do Jogo: </strong>
+        <br />
+        <input type="text" name="dataJogo" />
+        <br />
+        <strong>Preço de cada Bilhete</strong>
+        <br />
+        <input type="text" name="precoBilhete" />
+        <br />
+        <strong>Lotação Máxima</strong>
+        <br />
+        <input type="number" name="lotacaoMaxima" />
+        <br />
+        <strong>Quantidade de Bilhetes</strong>
+        <br />
+        <input type="number" name="quantidadeBilhetes" />
+        <br />
+       
+        <button type="submit" name="clicado" value="1">Criar Jogo</button>
+ 
+    </div>
+
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+    @if (TempData["Erro"] != null)
+    {
+        <div class="alert alert-danger">
+            <strong>Erro:</strong> @TempData["Erro"]
+        </div>
+    }
+</form>
+<form asp-controller="GerirBilhete" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Bilhetes</button>
+</form>

@@ -1,0 +1,27 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Alterar Preço Cachecol</h1>
+    <hr class="border-vermelho" />
+</div>
+<form asp-controller="AlterarPrecoCachecol" asp-action="Index" method="post">
+    <div class="card-img-top bilhete-img-container p-3">
+        <img src="~/images/Cachecol.PNG" alt="Cachecol" class="img-fluid rounded">
+    </div>
+    <div class="mb-2">
+        <strong>Preço Atual:</strong>
+        <strong>@ViewBag.precoAtualCachecol €</strong>
+        <br />
+        <strong>Defina Novo Preço:</strong>
+        <br />
+        <input type="text" name="novoPreco" />
+        <button type="submit" name="clicado" value="1">Alterar Preço</button>
+    </div>
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible" role="alert">
+            <strong>Sucesso:</strong> @TempData["Sucesso"]
+        </div>
+    }
+</form>
+<form asp-controller="GerirProduto" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Produto</button>
+</form>

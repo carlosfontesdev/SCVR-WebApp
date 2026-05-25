@@ -1,0 +1,80 @@
+﻿<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Produtos Oficial</h1>
+        <hr class="border-vermelho" />
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow border-0 text-center">
+
+                <div class="card-img-top bilhete-img-container p-3">
+                    <img src="~/images/camisolaCasa.PNG" alt="Camisola Casa SCVR" class="img-fluid rounded">
+                </div>
+                <div class="card-body bilhete-details text-left">
+                    <h2 class="h4 card-title font-weight-bold">Camisola Casa</h2>
+                    <p class="text-muted card-text mb-2">Equipamento Oficial 25/26</p>
+                    <ul class="list-unstyled mb-3">
+                        <li><strong>👕 Tamanhos:</strong> S, M, L, XL</li>
+                        <li><strong>🚚 Envio:</strong> 2 a 3 dias úteis</li>
+                        <li><strong>💰 Preço:</strong> @ViewBag.precoCamisolaCasa €</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer bg-white border-0 p-3 pt-0">
+                    <a asp-controller="EfetuarCompraCamisolaCasa" class="btn-scvr w-100">
+                        Comprar Camisola Casa
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow border-0 text-center">
+
+                <div class="card-img-top bilhete-img-container p-3">
+                    <img src="~/images/camisolaFora.PNG" alt="Camisola Fora SCVR" class="img-fluid rounded">
+                </div>
+
+                <div class="card-body bilhete-details text-left">
+                    <h2 class="h4 card-title font-weight-bold">Camisola de Fora</h2>
+                    <p class="text-muted card-text mb-2">Equipamento Alternativo 25/26</p>
+                    <ul class="list-unstyled mb-3">
+                        <li><strong>👕 Tamanhos:</strong> S, M, L, XL</li>
+                        <li><strong>🚚 Envio:</strong> 2 a 3 dias úteis</li>
+                        <li><strong>💰 Preço:</strong> @ViewBag.precoCamisolaFora €</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer bg-white border-0 p-3 pt-0">
+                    <a asp-controller="EfetuarCompraCamisolaFora" class="btn-scvr w-100">
+                        Comprar Camisola Alternativa
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow border-0 text-center">
+
+                <div class="card-img-top bilhete-img-container p-3">
+                    <img src="~/images/Cachecol.PNG" alt="Cachecol" class="img-fluid rounded">
+                </div>
+
+                <div class="card-body bilhete-details text-left">
+                    <h2 class="h4 card-title font-weight-bold">Cachecol SCVR</h2>
+                    <p class="text-muted card-text mb-2">Cachecol SCVR</p>
+                    <ul class="list-unstyled mb-3">
+                        <li><strong>🚚 Envio:</strong> 2 a 3 dias úteis</li>
+                        <li><strong>💰 Preço:</strong> @ViewBag.precoCachecol €</li>
+                    </ul>
+                </div>
+
+                <div class="card-footer bg-white border-0 p-3 pt-0">
+                    <a asp-controller="EfetuarCompraCachecol" class="btn-scvr w-100">
+                        Comprar Cachecol
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+﻿<div class="text-center mb-5">
+    <h1 class="display-4">Desativar Encomenda</h1>
+    <hr class="border-vermelho" />
+</div>
+
+<h2 class="text-danger fw-bold">Têm a certeza que quer desativar esta Encomenda</h2>
+<form asp-controller="DesativarEncomenda" asp-action="Index" method="Post">
+@foreach (var item in ViewBag.Encomenda)
+{
+    <div>
+        <strong>Tipo Produto</strong>
+        <br />
+        @item.NomeProduto
+        <br />
+        <strong>Tamanho</strong>
+        <br />
+        @item.Tamanho
+        <br />
+        <strong>Morada de Envio</strong>
+        <br />
+        @item.MoradaEnvio
+        <br />
+        <strong>Numero de Socio</strong>
+        <br />
+        @item.NumeroSocio
+        <br />
+        <strong>Utilizador</strong>
+        <br />
+        @item.UserName
+        <br />
+        <strong>Estado de Pagamento</strong>
+        <br />
+        @item.EstadoPagamento 
+        <br />
+        <br />
+            <button type="submit" name="clicado" value="1" class="btn-scvr mt-3" >Desativar Encomenda</button>
+        <br />
+    </div>
+}
+</form>
+<br />
+<form asp-controller="GerirEncomenda" asp-action="Index">
+    <button type="submit">Voltar Página Gerir Encomenda</button>
+</form>
