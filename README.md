@@ -16,7 +16,7 @@ ASP.NET web application developed for a football club management scenario.
 Users can:
 
 * View products and tickets
-* Purchase items ands tickets after authentication
+* Purchase items and tickets after authentication
 * Access different sections of the platform
 
 ## Admin Area
